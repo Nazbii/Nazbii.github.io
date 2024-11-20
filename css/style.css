@@ -1,0 +1,71 @@
+body {
+    background-color: black;
+}
+
+h1 {
+    text-align: left;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    margin-top: 150px;
+    margin-left: 50px;
+    font-size: 50px;
+    line-height: 1.5;
+}
+
+#Container3D {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    pointer-events: none;
+}
+
+header {
+    background-color: black;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    font-family: 'Inter', sans-serif;
+    width: 100%;
+
+}
+
+.register-btn {
+    background-color: white;
+    color: black;
+    padding: 10px 15px;
+    border-radius: 20px;
+    margin-left: 50pxpx;
+}
+
+.register-btn:hover {
+    background-color: grey;
+}
+
+nav {
+    flex-grow: 1;
+    /* This allows the nav to take up available space */
+    display: flex;
+    justify-content: center;
+    /* Center the navigation */
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 50px;
+    margin: 0;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+nav ul li a:hover {
+    color: grey;
+}
