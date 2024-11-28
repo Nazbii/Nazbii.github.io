@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Justice Test</title>
+    <link rel="stylesheet" href="test_style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Test Your Sense of Justice</h1>
+        <p>Take this quick test to see how strong your sense of justice is.</p>
+        <button type="button" onclick="startTest()">Start</button>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        let currentQuestion = 0;
+        let score = 0;
+        const questions = [
+            {
+                question: "You see someone being bullied at school or work. What do you do?",
+                options: [
+                    { text: "Step in and try to stop the bullying.", value: "high" },
+                    { text: "Report it to someone in authority later.", value: "medium" },
+                    { text: "Ignore it and walk away.", value: "low" }
+                ],
+                correct: "high"
+            },
+            {
+                question: "Your friend is accused of something they didn't do. What do you do?",
+                options: [
+                    { text: "Defend them publicly, even if it risks your reputation.", value: "high" },
+                    { text: "Speak privately to someone who can help.", value: "medium" },
+                    { text: "Stay silent to avoid conflict.", value: "low" }
+                ],
+                correct: "high"
+            },
+            {
+                question: "You find a wallet on the street with money and an ID. What do you do?",
+                options: [
+                    { text: "Return it to the owner immediately.", value: "high" },
+                    { text: "Leave it where you found it.", value: "medium" },
+                    { text: "Keep the money and discard the wallet.", value: "low" }
+                ],
+                correct: "high"
+            },
+            {
+                question: "A cashier gives you extra change by mistake. What do you do?",
+                options: [
+                    { text: "Return the extra money.", value: "high" },
+                    { text: "Keep it and say nothing.", value: "low" },
+                    { text: "Leave the store quickly before they notice.", value: "medium" }
+                ],
+                correct: "high"
+            },
+            {
+                question: "A stranger falls and injures themselves in front of you. What do you do?",
+                options: [
+                    { text: "Help them immediately and call for assistance.", value: "high" },
+                    { text: "Wait to see if someone else helps first.", value: "medium" },
+                    { text: "Walk past and pretend you didn’t see.", value: "low" }
+                ],
+                correct: "high"
+            },
+            {
+                question: "A coworker takes credit for your idea. How do you respond?",
+                options: [
+                    { text: "Confront them and set the record straight.", value: "high" },
+                    { text: "Discuss it with your manager privately.", value: "medium" },
+                    { text: "Let it go and avoid conflict.", value: "low" }
+                ],
+                correct: "high"
+            },
+            {
+                question: "You witness a hit-and-run accident. What do you do?",
+                options: [
+                    { text: "Report it to the police and offer to be a witness.", value: "high" },
+                    { text: "Wait to see if someone else reports it.", value: "medium" },
+                    { text: "Leave the scene quickly.", value: "low" }
+                ],
+                correct: "high"
+            },
+            {
+                question: "You accidentally break someone’s property. What do you do?",
+                options: [
+                    { text: "Apologize and offer to pay for the damage.", value: "high" },
+                    { text: "Apologize but don’t offer compensation.", value: "medium" },
+                    { text: "Walk away and hope they don’t notice.", value: "low" }
+                ],
+                correct: "high"
+            },
+            {
+                question: "You see someone stealing from a store. What do you do?",
+                options: [
+                    { text: "Inform the store staff immediately.", value: "high" },
+                    { text: "Ignore it and walk away.", value: "low" },
+                    { text: "Secretly follow the person to see what they do.", value: "medium" }
+                ],
+                correct: "high"
+            },
+            {
+                question: "A friend is being unfairly treated by a teacher or boss. What do you do?",
+                options: [
+                    { text: "Support your friend and speak up on their behalf.", value: "high" },
+                    { text: "Offer advice but don’t get involved.", value: "medium" },
+                    { text: "Stay out of it completely.", value: "low" }
+                ],
+                correct: "high"
+            },
+            {
+                question: "You witness discrimination based on race or gender. What do you do?",
+                options: [
+                    { text: "Speak up and challenge the discrimination.", value: "high" },
+                    { text: "Report it to someone in authority.", value: "medium" },
+                    { text: "Stay silent to avoid getting involved.", value: "low" }
+                ],
+                correct: "high"
+            },
+            {
+                question: "You find out a friend has cheated on an important exam. What do you do?",
+                options: [
+                    { text: "Confront them and encourage them to confess.", value: "high" },
+                    { text: "Ignore it and let them handle it.", value: "medium" },
+                    { text: "Report them anonymously.", value: "medium" }
+                ],
+                correct: "high"
+            },
+            {
+                question: "You’re part of a team, and one member isn’t contributing. What do you do?",
+                options: [
+                    { text: "Speak to them and encourage participation.", value: "high" },
+                    { text: "Inform the team leader.", value: "medium" },
+                    { text: "Do the extra work yourself to avoid issues.", value: "low" }
+                ],
+                correct: "high"
+            },
+            {
+                question: "A colleague is unfairly fired for something they didn’t do. What do you do?",
+                options: [
+                    { text: "Speak up to HR or management on their behalf.", value: "high" },
+                    { text: "Offer emotional support but stay out of it.", value: "medium" },
+                    { text: "Avoid getting involved.", value: "low" }
+                ],
+                correct: "high"
+            },
+            {
+                question: "You find out your company is involved in unethical practices. What do you do?",
+                options: [
+                    { text: "Report it to the relevant authorities or media.", value: "high" },
+                    { text: "Speak privately to your manager.", value: "medium" },
+                    { text: "Ignore it to protect your job.", value: "low" }
+                ],
+                correct: "high"
+            },
+            {
+                question: "You see someone being denied a service they are entitled to. What do you do?",
+                options: [
+                    { text: "Step in and advocate for them.", value: "high" },
+                    { text: "Inform someone in authority.", value: "medium" },
+                    { text: "Walk away.", value: "low" }
+                ],
+                correct: "high"
+            },
+            {
+                question: "A family member is being unfair to another. What do you do?",
+                options: [
+                    { text: "Intervene and mediate the situation.", value: "high" },
+                    { text: "Talk to them privately later.", value: "medium" },
+                    { text: "Stay out of it and let them resolve it.", value: "low" }
+                ],
+                correct: "high"
+            },
+            {
+                question: "You see someone vandalizing public property. What do you do?",
+                options: [
+                    { text: "Report them to the authorities.", value: "high" },
+                    { text: "Ignore it and move on.", value: "low" },
+                    { text: "Try to stop them yourself.", value: "medium" }
+                ],
+                correct: "high"
+            },
+            {
+                question: "A friend asks you to lie for them in court. What do you do?",
+                options: [
+                    { text: "Refuse and explain why it’s wrong.", value: "high" },
+                    { text: "Lie for them to protect them.", value: "low" },
+                    { text: "Avoid getting involved in the situation.", value: "medium" }
+                ],
+                correct: "high"
+            },
+            {
+                question: "You witness someone being overcharged for an item. What do you do?",
+                options: [
+                    { text: "Inform the person about the overcharge.", value: "high" },
+                    { text: "Let them handle it themselves.", value: "medium" },
+                    { text: "Stay silent and leave the store.", value: "low" }
+                ],
+                correct: "high"
+            }
+        ];
+
+
+        function calculateScore() {
+            const answers = document.querySelectorAll('input[type="radio"]:checked');
+            answers.forEach(answer => {
+                const question = questions[parseInt(answer.name)];  // Get question object from index
+                if (answer.value === question.correct) {
+                    score++;
+                }
+            });
+            document.getElementById('result').innerHTML = `Your score: ${score} out of 20.`;
+        }
+
+
+
+        function startTest() {
+            document.querySelector(".container").innerHTML = `
+                <h1>Question 1</h1>
+                <p>${questions[0].question}</p>
+                <button onclick="answerQuestion(0, 'defend')">Step in and defend them</button>
+                <button onclick="answerQuestion(0, 'silent')">Stay silent and watch</button>
+            `;
+        }
+
+        function answerQuestion(questionIndex, selectedValue) {
+            if (questions[questionIndex].correct === selectedValue) {
+                score++;
+            }
+            currentQuestion++;
+            if (currentQuestion < questions.length) {
+                displayNextQuestion();
+            } else {
+                showResults();
+            }
+        }
+
+        function displayNextQuestion() {
+            const question = questions[currentQuestion];
+            document.querySelector(".container").innerHTML = `
+                <h1>Question ${currentQuestion + 1}</h1>
+                <p>${question.question}</p>
+                ${question.options.map((option, index) => `
+                    <button onclick="answerQuestion(${currentQuestion}, '${option.value}')">
+                        ${option.text}
+                    </button>`).join('')}
+            `;
+        }
+
+        function showResults() {
+            const percentage = (score / questions.length) * 100;
+            let resultMessage = "";
+
+            if (percentage >= 80) {
+                resultMessage = "You have a strong sense of justice!";
+            } else if (percentage >= 50) {
+                resultMessage = "You have a moderate sense of justice.";
+            } else {
+                resultMessage = "Your sense of justice might need some work.";
+            }
+
+            document.querySelector(".container").innerHTML = `
+                <h1>Your Result</h1>
+                <p>Your sense of justice is ${percentage}%.</p>
+                <p>${resultMessage}</p>
+                <button onclick="restartTest()">Try Again</button>
+                 <button onclick="goToHome()">Back to Home</button>
+            `;
+        }
+
+        function restartTest() {
+            score = 0;
+            currentQuestion = 0;
+            startTest();
+        }
+        function goToHome() {
+            window.location.href = "Home.html";
+        }
+    </script>
+</body>
+
+</html>

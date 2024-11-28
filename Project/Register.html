@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Justice Test - Registration</title>
+    <link rel="stylesheet" href="register.css">
+</head>
+
+<body>
+
+    <div class="container" id="register-container">
+        <h1>Register for the Justice Test</h1>
+        <form id="register-form">
+            <input type="text" placeholder="Full Name" required>
+            <input type="email" placeholder="Email" required>
+            <input type="password" placeholder="Password" required minlength="6">
+            <button type="submit">Register</button>
+        </form>
+        <p>Already registered? <a href="#" onclick="showSignIn()">Sign In</a></p>
+    </div>
+
+    <div class="container" id="signin-container" style="display: none;">
+        <h1>Sign In</h1>
+        <form id="signin-form">
+            <input type="email" placeholder="Email" required>
+            <input type="password" placeholder="Password" required minlength="6">
+            <button type="submit">Sign In</button>
+        </form>
+        <p>New here? <a href="#" onclick="showRegister()">Register</a></p>
+    </div>
+
+    <script>
+        // Function to show the Sign In form and hide the Register form
+        function showSignIn() {
+            document.getElementById('register-container').style.display = 'none';
+            document.getElementById('signin-container').style.display = 'block';
+        }
+
+        // Function to show the Register form and hide the Sign In form
+        function showRegister() {
+            document.getElementById('signin-container').style.display = 'none';
+            document.getElementById('register-container').style.display = 'block';
+        }
+    </script>
+</body>
+
+</html>

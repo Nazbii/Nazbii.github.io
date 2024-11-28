@@ -1,0 +1,127 @@
+/* General Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* Full viewport height */
+    overflow: hidden;
+    /* Avoid unwanted scrolling */
+}
+
+/* Centered Container for Content */
+.container {
+    max-width: 600px;
+    width: 90%;
+    background: rgba(0, 0, 0, 0.95);
+    /* Slightly more opaque for better contrast */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+    /* Soft white glow effect */
+}
+
+/* Headings Styling */
+h1,
+h2 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #00d1ff;
+    /* Accent color for the heading */
+}
+
+/* Paragraph Styling */
+p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+/* Buttons Styling */
+button,
+.btn {
+    background-color: #00d1ff;
+    /* Accent color */
+    color: black;
+    padding: 12px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s;
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+}
+
+button:hover,
+.btn:hover {
+    background-color: white;
+    color: black;
+    transform: scale(1.05);
+    /* Slight zoom effect on hover */
+}
+
+/* Input Fields */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea,
+select {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    border-radius: 8px;
+    outline: none;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: #00d1ff;
+    box-shadow: 0 0 10px rgba(0, 209, 255, 0.5);
+}
+
+/* Input Placeholder Color */
+input::placeholder,
+textarea::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* Navigation Links */
+a {
+    color: #00d1ff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 28px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    button {
+        font-size: 16px;
+        padding: 10px 16px;
+    }
+}
