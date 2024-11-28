@@ -1,71 +1,119 @@
 body {
-    background-color: black;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(45deg,#d2001a, #7462ff, #f48e21, #23d5ab);
+    background-size: 300% 300%;
+    animation: color 12s ease-in-out infinite;
 }
 
-h1 {
-    text-align: left;
-    color: white;
-    font-family: 'Inter', sans-serif;
-    margin-top: 150px;
-    margin-left: 50px;
-    font-size: 50px;
-    line-height: 1.5;
-}
-
-#Container3D {
-    position: fixed;
-    inset: 0;
-    z-index: 100;
-    pointer-events: none;
+@keyframes color {
+    0%{
+        background-position: 0 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0 50%;
+    }
 }
 
 header {
-    background-color: black;
-    display: flex;
-    align-items: center;
-    padding: 20px;
-    font-family: 'Inter', sans-serif;
-    width: 100%;
-
+    background-color: transparent !important;
 }
 
-.register-btn {
+.nav-link {
+    color: white !important;
+    margin: 0px 15px;
+}
+
+.nav-link:hover {
+    color: rgb(31, 203, 255) !important;
+}
+
+.btn:hover {
+    background-color: rgb(141, 228, 255);
+    color: rgb(45, 45, 45);
+    border-color: rgb(141, 228, 255);
+}
+
+.btn-outline-primary {
+    border-color: white;
+    color: white;
+}
+
+.btn-primary {
     background-color: white;
     color: black;
-    padding: 10px 15px;
-    border-radius: 20px;
-    margin-left: 50pxpx;
+    border-color: white;
 }
 
-.register-btn:hover {
-    background-color: grey;
+.btn-primary:hover {
+    background-color: rgb(141, 228, 255);
+    color: rgb(45, 45, 45);;
+    border-color: rgb(141, 228, 255);
 }
 
-nav {
-    flex-grow: 1;
-    /* This allows the nav to take up available space */
+.main-content {
     display: flex;
-    justify-content: center;
-    /* Center the navigation */
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
 }
 
-nav ul {
-    list-style-type: none;
-    display: flex;
-    gap: 50px;
+.main-content-quote {
+    font-weight: bold;
+    font-family: "Inter", sans-serif;
     margin: 0;
 }
 
-nav ul li {
-    margin-left: 20px;
+.btn-light {
+    margin-top: 30px;
+    padding: 15px 70px;
 }
 
-nav ul li a {
+.btn-light:hover {
+    background-color: rgb(141, 228, 255) !important;
+    color: rgb(45, 45, 45);
+    border-color:  rgb(141, 228, 255);
+}
+
+.main-content-bottom {
+    margin-top: 200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.court-image {
+    border-radius: 20px;
+}
+
+.main-content-bottom-sub {
+    width: 500px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+
+.main-content-quote-second {
+    font-weight: bold;
+    font-family: "Inter", sans-serif;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.main-bottom-text {
+    margin-top: 10px;
+    font-family: "Inter", sans-serif;
     color: white;
-    text-decoration: none;
-    font-size: 16px;
+    text-align: justify;
 }
 
-nav ul li a:hover {
-    color: grey;
+.footer {
+    margin-top: 50px;
+}
+
+.text-body-secondary{
+    color: white;
 }
