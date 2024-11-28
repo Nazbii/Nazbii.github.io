@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" type = "text/css" href="https://nazbii.github.io/Project/style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -13,12 +13,10 @@
     <header>
         <nav>
             <ul>
-                <li> <a href="#home">
+                <li> <a href="Home.html" class="start-link">
                         Home
                     </a></li>
-                <li> <a href="#test">
-                        Test
-                    </a></li>
+                <li> <a href="Test.html" class="start-link">Test</a></li>
                 <li> <a href="#cases">
                         Cases
                     </a></li>
@@ -27,7 +25,8 @@
                     </a></li>
             </ul>
         </nav>
-        <button class="register-btn">Register / Sign in</button>
+        <button class="register-btn" onclick="window.location.href='Register.html'">Register / Sign In</button>
+
     </header>
 
     <h1>Explore, learn, and understand <br />the power of justice in <br /> shaping a fairer world</h1>
@@ -36,6 +35,11 @@
         <div id="Container3D"></div>
     </main>
     <script type="module" src="js/main.js"></script>
+
+
+
+
+
 </body>
 
 </html>
