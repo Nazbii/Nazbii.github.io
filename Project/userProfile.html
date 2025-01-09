@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="userProfile.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="container">
+        <!-- Navigation Menu -->
+        <div class="navigation">
+            <h3>Menu</h3>
+            <ul class="menu-list">
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="#">Cases</a></li>
+                <li><a href="Test.html">Test</a></li>
+            </ul>
+            <ul class="menu-footer">
+                <li><a id="logout" href="#">Logout</a></li>
+            </ul>
+        </div>
+
+        <!-- Main Content -->
+        <div class="content">
+            <div class="profile-box">
+                <div class="profile-pic-container">
+                    <img id="profile-pic" src="profile.jpg" alt="User Profile" class="profile-pic">
+                </div>
+                <div class="user-info">
+                    <h3 class="user-name" id="user-name">John Doe</h3>
+                </div>
+                <button id="edit-profile-btn" class="edit-profile-btn" aria-label="Edit Profile">Edit Profile
+                    Picture</button>
+                <input type="file" id="file-input" style="display: none;" accept="image/*">
+            </div>
+
+            <!-- Combined Progress Section -->
+            <div class="progress-container">
+                <h3>Progress Overview</h3>
+                <div class="progress-cards">
+                    <div class="card yellow">
+                        <h4>Cases In Progress</h4>
+                        <p>5 Cases</p>
+                    </div>
+                    <div class="card pink">
+                        <h4>Test Results</h4>
+                        <p>78% Completed</p>
+                    </div>
+                    <div class="card green">
+                        <h4>Related Cases</h4>
+                        <p>10 Cases</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Calendar Section -->
+        <div class="datepicker">
+            <div class="datepicker-top">
+                <div class="month-selector">
+                    <button class="arrow" id="prev-month"><i class="material-icons">chevron_left</i></button>
+                    <span class="month-name" id="month-name">January 2025</span>
+                    <button class="arrow" id="next-month"><i class="material-icons">chevron_right</i></button>
+                </div>
+                <div class="datepicker-calendar" id="calendar-grid">
+                    <span class="day">Mo</span>
+                    <span class="day">Tu</span>
+                    <span class="day">We</span>
+                    <span class="day">Th</span>
+                    <span class="day">Fr</span>
+                    <span class="day">Sa</span>
+                    <span class="day">Su</span>
+                    <button class="date faded">30</button>
+                    <button class="date">1</button>
+                    <button class="date">2</button>
+                    <button class="date">3</button>
+                    <button class="date">4</button>
+                    <button class="date">5</button>
+                    <button class="date">6</button>
+                    <button class="date">7</button>
+                    <button class="date">8</button>
+                    <button class="date">9</button>
+                    <button class="date">10</button>
+                    <button class="date">11</button>
+                    <button class="date">12</button>
+                    <button class="date">13</button>
+                    <button class="date">14</button>
+                    <button class="date">15</button>
+                    <button class="date">16</button>
+                    <button class="date">17</button>
+                    <button class="date">18</button>
+                    <button class="date">19</button>
+                    <button class="date">20</button>
+                    <button class="date">21</button>
+                    <button class="date">22</button>
+                    <button class="date">23</button>
+                    <button class="date">24</button>
+                    <button class="date">25</button>
+                    <button class="date">26</button>
+                    <button class="date">27</button>
+                    <button class="date">28</button>
+                    <button class="date">29</button>
+                    <button class="date">30</button>
+                    <button class="date">31</button>
+                    <button class="date faded">1</button>
+                    <button class="date faded">2</button>
+                    <button class="date faded">3</button>
+                </div>
+            </div>
+
+            <script>
+                // Load user data from session storage
+                document.addEventListener("DOMContentLoaded", function () {
+                    const loggedInUser = JSON.parse(sessionStorage.getItem("loggedInUser"));
+
+                    if (!loggedInUser) {
+                        // Redirect to sign-in page if no user is logged in
+                        window.location.href = "Register.html";
+                    } else {
+                        // Display user data
+                        document.getElementById("user-name").textContent = loggedInUser.fullName;
+                    }
+                });
+
+                // Logout functionality
+                document.getElementById("logout").addEventListener("click", function () {
+                    sessionStorage.removeItem("loggedInUser");
+                    window.location.href = "Register.html";
+                });
+
+
+
+                document.addEventListener("DOMContentLoaded", function () {
+                    const fileInput = document.getElementById("file-input");
+                    const editProfileBtn = document.getElementById("edit-profile-btn");
+                    const profilePic = document.getElementById("profile-pic");
+                    const userName = document.getElementById("user-name");
+
+                    // Load saved profile picture and user name from localStorage
+                    const savedProfilePic = localStorage.getItem("profilePicture");
+                    const savedUserName = localStorage.getItem("userName");
+
+                    if (savedProfilePic) {
+                        profilePic.src = savedProfilePic; // Set saved image as profile picture
+                    }
+                    if (savedUserName) {
+                        userName.textContent = savedUserName; // Set saved user name
+                    }
+
+                    // Click event to open the file input dialog
+                    editProfileBtn.addEventListener("click", function () {
+                        fileInput.click(); // Trigger the file input
+                    });
+
+                    // Change event to handle file selection and update profile picture
+                    fileInput.addEventListener("change", function (event) {
+                        const file = event.target.files[0];
+                        if (file) {
+                            const reader = new FileReader();
+
+                            reader.onload = function (e) {
+                                // Set the profile picture to the uploaded image
+                                profilePic.src = e.target.result;
+
+                                // Save the image data to localStorage
+                                localStorage.setItem("profilePicture", e.target.result);
+                            };
+
+                            reader.readAsDataURL(file); // Convert file to base64 string
+                        }
+                    });
+                });
+
+
+
+                document.addEventListener("DOMContentLoaded", function () {
+                    const monthNameEl = document.querySelector(".month-name");
+                    const calendarGridEl = document.querySelector(".datepicker-calendar");
+                    const prevMonthBtn = document.querySelector(".arrow:first-child"); // Left arrow
+                    const nextMonthBtn = document.querySelector(".arrow:last-child");  // Right arrow
+                    const todayButton = document.querySelector(".tag");
+
+                    let currentDate = new Date(); // Current date
+                    let displayedMonth = currentDate.getMonth(); // Current month (0-indexed)
+                    let displayedYear = currentDate.getFullYear(); // Current year
+
+                    const monthNames = [
+                        "January", "February", "March", "April", "May", "June",
+                        "July", "August", "September", "October", "November", "December"
+                    ];
+
+                    // Function to update the calendar grid
+                    function updateCalendar(month, year) {
+                        // Update the displayed month and year
+                        monthNameEl.textContent = `${monthNames[month]} ${year}`;
+
+                        // Clear existing calendar dates
+                        calendarGridEl.innerHTML = `
+                        <span class="day">Mo</span>
+                        <span class="day">Tu</span>
+                        <span class="day">We</span>
+                        <span class="day">Th</span>
+                        <span class="day">Fr</span>
+                        <span class="day">Sa</span>
+                        <span class="day">Su</span>
+                    `;
+
+                        // Get the first day of the month (0 = Sunday, 6 = Saturday)
+                        const firstDay = new Date(year, month, 1).getDay();
+                        const adjustedFirstDay = (firstDay === 0) ? 6 : firstDay - 1; // Adjust to start week on Monday
+
+                        // Total days in the month
+                        const totalDays = new Date(year, month + 1, 0).getDate();
+
+                        // Total days from the previous month to fill empty slots
+                        const previousMonthDays = new Date(year, month, 0).getDate();
+
+                        // Fill empty slots for days from the previous month
+                        for (let i = adjustedFirstDay; i > 0; i--) {
+                            const emptyDate = document.createElement("button");
+                            emptyDate.classList.add("date", "faded");
+                            emptyDate.textContent = previousMonthDays - i + 1;
+                            calendarGridEl.appendChild(emptyDate);
+                        }
+
+                        // Populate the current month's dates
+                        for (let day = 1; day <= totalDays; day++) {
+                            const dateBtn = document.createElement("button");
+                            dateBtn.classList.add("date");
+                            dateBtn.textContent = day;
+
+                            // Highlight the current day
+                            if (
+                                day === currentDate.getDate() &&
+                                month === currentDate.getMonth() &&
+                                year === currentDate.getFullYear()
+                            ) {
+                                dateBtn.classList.add("current-day");
+                            }
+
+                            // Add click event for date selection
+                            dateBtn.addEventListener("click", function () {
+                                alert(`You selected: ${day} ${monthNames[month]} ${year}`);
+                            });
+
+                            calendarGridEl.appendChild(dateBtn);
+                        }
+
+                        // Fill empty slots for days from the next month
+                        const remainingSlots = 42 - calendarGridEl.children.length; // Ensure 6 rows (7x6 = 42)
+                        for (let i = 1; i <= remainingSlots; i++) {
+                            const emptyDate = document.createElement("button");
+                            emptyDate.classList.add("date", "faded");
+                            emptyDate.textContent = i;
+                            calendarGridEl.appendChild(emptyDate);
+                        }
+                    }
+
+                    // Event listeners for month navigation
+                    prevMonthBtn.addEventListener("click", function () {
+                        if (displayedMonth === 0) {
+                            displayedMonth = 11; // Move to December of the previous year
+                            displayedYear -= 1;
+                        } else {
+                            displayedMonth -= 1;
+                        }
+                        updateCalendar(displayedMonth, displayedYear);
+                    });
+
+                    nextMonthBtn.addEventListener("click", function () {
+                        if (displayedMonth === 11) {
+                            displayedMonth = 0; // Move to January of the next year
+                            displayedYear += 1;
+                        } else {
+                            displayedMonth += 1;
+                        }
+                        updateCalendar(displayedMonth, displayedYear);
+                    });
+
+                    // Event listener for "Today" button
+                    todayButton.addEventListener("click", function () {
+                        currentDate = new Date(); // Reset to the current date
+                        displayedMonth = currentDate.getMonth();
+                        displayedYear = currentDate.getFullYear();
+                        updateCalendar(displayedMonth, displayedYear);
+                    });
+
+                    // Initialize the calendar
+                    updateCalendar(displayedMonth, displayedYear);
+                });
+
+                document.addEventListener("DOMContentLoaded", function () {
+                    const testForm = document.getElementById("test-form");
+                    const resultContainer = document.getElementById("result");
+
+                    // Check if a user is logged in
+                    const loggedInUser = JSON.parse(sessionStorage.getItem("loggedInUser"));
+
+                    if (!loggedInUser) {
+                        alert("You must be logged in to take the test.");
+                        window.location.href = "Register.html";
+                        return;
+                    }
+
+                    // Get user's email for identifying results
+                    const userEmail = loggedInUser.email;
+
+                    // Test submission logic
+                    testForm.addEventListener("submit", function (event) {
+                        event.preventDefault();
+
+                        // Calculate test score (example logic)
+                        const score = Math.floor(Math.random() * 100) + 1; // Random score for demo
+                        const testResult = { date: new Date(), score };
+
+                        // Retrieve existing test results for this user
+                        let userTestResults = JSON.parse(localStorage.getItem(`testResults_${userEmail}`)) || [];
+
+                        // Add the new test result
+                        userTestResults.push(testResult);
+
+                        // Save updated results back to localStorage
+                        localStorage.setItem(`testResults_${userEmail}`, JSON.stringify(userTestResults));
+
+                        // Display result to the user
+                        resultContainer.textContent = `Your Score: ${score}%`;
+                    });
+                });
+
+
+
+
+
+
+
+            </script>
+
+
+
+
+
+
+
+</body>
+
+</html>
