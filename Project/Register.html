@@ -4,18 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Justice Test - Registration</title>
-    <link rel="stylesheet" href="register.css">
+    <title>Registration</title>
+    <link rel="stylesheet" href="css\register.css">
 </head>
 
 <body>
-
     <div class="container" id="register-container">
-        <h1>Register for the Justice Test</h1>
+        <h1>Register</h1>
         <form id="register-form">
-            <input type="text" placeholder="Full Name" required>
-            <input type="email" placeholder="Email" required>
-            <input type="password" placeholder="Password" required minlength="6">
+            <input type="text" id="register-name" placeholder="Full Name" required>
+            <input type="email" id="register-email" placeholder="Email" required>
+            <input type="password" id="register-password" placeholder="Password" required minlength="6">
             <button type="submit">Register</button>
         </form>
         <p>Already registered? <a href="#" onclick="showSignIn()">Sign In</a></p>
@@ -24,26 +23,92 @@
     <div class="container" id="signin-container" style="display: none;">
         <h1>Sign In</h1>
         <form id="signin-form">
-            <input type="email" placeholder="Email" required>
-            <input type="password" placeholder="Password" required minlength="6">
+            <input type="email" id="signin-email" placeholder="Email" required>
+            <input type="password" id="signin-password" placeholder="Password" required minlength="6">
             <button type="submit">Sign In</button>
         </form>
         <p>New here? <a href="#" onclick="showRegister()">Register</a></p>
     </div>
 
     <script>
-        // Function to show the Sign In form and hide the Register form
+        // Utility functions to switch between forms
         function showSignIn() {
             document.getElementById('register-container').style.display = 'none';
             document.getElementById('signin-container').style.display = 'block';
         }
 
-        // Function to show the Register form and hide the Sign In form
         function showRegister() {
             document.getElementById('signin-container').style.display = 'none';
             document.getElementById('register-container').style.display = 'block';
         }
+
+        // Event listener for the page load
+        document.addEventListener("DOMContentLoaded", function () {
+            const hash = window.location.hash; // Get the URL hash
+            if (hash === "#login") {
+                showSignIn(); // Show login form if #login is in the URL
+            } else {
+                showRegister(); // Default to showing the register form
+            }
+        });
+
+        // Register form submission
+        document.getElementById("register-form").addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const fullName = document.getElementById("register-name").value;
+            const email = document.getElementById("register-email").value;
+            const password = document.getElementById("register-password").value;
+
+            // Check if the user already exists in localStorage
+            const existingUser = localStorage.getItem(email);
+
+            if (existingUser) {
+                // If the user exists, alert and do not register again
+                alert("An account with this email already exists. Please sign in instead.");
+                return; // Stop further execution
+            }
+
+            // If user does not exist, register them
+            const user = { fullName, email, password };
+
+            // Save user details in localStorage
+            localStorage.setItem(email, JSON.stringify(user));
+
+            // Save logged-in user to sessionStorage
+            sessionStorage.setItem("loggedInUser", JSON.stringify(user));
+
+            // Redirect to the user profile page
+            alert("Registration successful! Redirecting to your profile...");
+            window.location.href = "userProfile.html";
+        });
+
+
+
+        // Sign-in form submission
+        document.getElementById("signin-form").addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const email = document.getElementById("signin-email").value;
+            const password = document.getElementById("signin-password").value;
+
+            // Retrieve user data from LocalStorage
+            const storedUser = JSON.parse(localStorage.getItem(email));
+
+            if (storedUser && storedUser.password === password) {
+                alert("Sign-in successful!");
+
+                // Save the logged-in user to sessionStorage
+                sessionStorage.setItem("loggedInUser", JSON.stringify(storedUser));
+
+                // Redirect to the user profile page
+                window.location.href = "userProfile.html";
+            } else {
+                alert("Invalid email or password. Please try again.");
+            }
+        });
     </script>
+
 </body>
 
 </html>
