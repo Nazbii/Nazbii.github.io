@@ -32,7 +32,7 @@ const scrollLine = document.querySelector('.scroll-line');
         const section = document.getElementById(sectionId);
         section.scrollIntoView({
            behavior: 'smooth'
-        }); // Smooth scroll to the section
+        }); 
      }
      
 
@@ -49,11 +49,8 @@ const init = function(){
 }
 
 const observer = new IntersectionObserver(entries => {
-    // Loop over the entries
     entries.forEach(entry => {
-      // If the element is visible
       if (entry.isIntersecting) {
-        // Add the animation class
         entry.target.classList.add('image-animation');
       }
     });
@@ -76,5 +73,3 @@ document.addEventListener("scroll", () => {
       hero.classList.remove("fade-out");
     }
   });
-
-// init();
