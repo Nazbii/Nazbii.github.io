@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>TrueJustice</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="https://Nazbii.github.io/Project/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,44 +12,97 @@
     <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@500&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 </head>
 
+
 <body>
+  <!-- PROGRESS BAR -->
+  <div class="scroll-line"></div>
+
+  <!-- BACKGROUND GRADIENT -->
+  <div class="background-gradient">
+  
+    <!-- HEADER -->
     <div class="container">
       <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4">
         <p class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none"></p>
   
         <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-          <li><a href="https://Nazbii.github.io/Project/Home.html" class="nav-link px-2 link-secondary">Home</a></li>
-          <li><a href="https://nazbii.github.io/Project/Test.html" class="nav-link px-2 link-dark">Test</a></li>
-          <li><a href="#" class="nav-link px-2 link-dark">Cases</a></li>
-          <li><a href="#" class="nav-link px-2 link-dark">Contact</a></li>
+          <li><a href="https://Nazbii.github.io/Project/Home.html" class="nav-link px-2">Home</a></li>
+          <li><a href="https://nazbii.github.io/Project/Test.html" class="nav-link px-2">Test</a></li>
+          <li><a href="#" class="nav-link px-2">Cases</a></li>
+          <li><button onclick="scrollToSection('bottom')" class="nav-link px-2 unique">Contact</button></li>
         </ul>
   
-        <div class="col-md-3 text-end">
-          <button type="button" class="btn btn-outline-primary me-2">Login</button>
-          <button type="button" class="btn btn-primary" onclick="window.location.href='https://Nazbii.github.io/Project/Register.html'">Sign up</button>
+        <div class="col-md-3">
+          <button type="button" class="btn">Login</button>
+          <button type="button" class="btn" onclick="window.location.href='https://Nazbii.github.io/Project/Register.html'">Sign up</button>
         </div>
       </header>
-    </div>
+  </div>
 
-
-    <div class="main-content">
-      <div class="main-content-box">
-         <h1 class="main-content-quote">Stay on the side of truth</h1>
-        <button type="button" class="btn btn-light">More</button>
+  <!-- MAIN CONTENT FIRST BLOCK -->
+   <section>
+      <div class="main-content">
+        <div class="main-content-box">
+            <h1 id="webName">TrueJustice</h1>
+           <h1 class="main-content-quote">Stay on the side of truth</h1>
+          <button type="button" class="btn btn-light">More</button>
+        </div>
+        <img src="/images/Glass.png" class="img-fluid glass" alt="...">
       </div>
-      <img src="images/Glass.png" alt="">
-    </div>
+    </section>
 
-    <div class="main-content-bottom">
-      <img class="court-image" src="images/Justice.png" alt="">
-      <div class="main-content-bottom-sub">
-        <h1 class="main-content-quote-second">Why justice is important?</h1>
-        <p class="main-bottom-text">Justice, at its core, entails treating individuals equitably and impartially, regardless of their background, social status, or personal beliefs. It is the embodiment of fairness and integrity, promoting equal opportunities and ensuring that every person has access to their basic human rights</p>
+    <section class="main-content-bottom">
+      <div class="main-content-bottom-container">
+        <img src="/images/Justice2.png" class="img-fluid special" alt="Justice Illustration">
+        <div class="main-content-bottom-sub">
+          <h1 class="main-content-quote-second">Why justice is important?</h1>
+          <p class="main-bottom-text">
+            Justice, at its core, entails treating individuals equitably and impartially, regardless of their background, social status, or personal beliefs. 
+            It is the embodiment of fairness and integrity, promoting equal opportunities and ensuring that every person has access to their basic human rights.
+          </p>
+        </div>
       </div>
-    </div>
+    </section>
+    
+  
+  <!-- MAIN CONTENT FIRST BLOCK END -->
 
-    <div class="container footer">
-      <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+  <!-- MAIN CONTENT SECOND BLOCK -->
+
+  <section>
+    <div class="black-bg">
+
+      <div class="black-bg-content">
+        <div class="text-box">
+          <h1 class="black-bg-quote">Why justice is important?</h1>
+          <p class="black-bg-text">Justice, at its core, entails treating individuals equitably and impartially, regardless of their background, social status, or personal beliefs. It is the embodiment of fairness and integrity, promoting equal opportunities and ensuring that every person has access to their basic human rights</p>
+        </div>
+  
+        <img src="/images/Spiral.png" class="img-fluid" alt="...">
+      </div>
+    </div> 
+  </section>
+    
+  <!-- MAIN CONTENT SECOND BLOCK END -->
+
+  <section>
+    <div class="main-content-second">
+      <img src="/images/Spiral.png" class="img-fluid" alt="...">
+  
+      <div class="main-second-sub">
+        <h1 class="second-quote">Why justice is important?</h1>
+        <p class="second-bottom-text">Justice, at its core, entails treating individuals equitably and impartially, regardless of their background, social status, or personal beliefs. It is the embodiment of fairness and integrity, promoting equal opportunities and ensuring that every person has access to their basic human rights</p>
+      </div>
+  
+      <div class="placeholder"></div>
+    </div>
+  
+  </section>
+  
+  <!-- FOOTER -->
+  <section id="footer-section">
+    <div id="bottom" class="container footer">
+      <footer class="d-flex flex-wrap justify-content-between align-items-center footer-box">
         <div class="col-md-4 d-flex align-items-center">
           <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
             <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
@@ -58,9 +111,15 @@
         </div>
       </footer>
     </div>
+  </section>
+
+
+</div> 
+  <!-- GRADIENT BACKGROUND END -->
+
+  <!-- JAVASCRIPT -->
 
     <script type="module" src="js/main.js"></script>
+    <script src="/MainPage/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 </body>
-
-</html>
