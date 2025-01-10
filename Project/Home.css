@@ -1,7 +1,7 @@
 z* {
     box-sizing: border-box;
   }
-  
+
 html {
     margin: 0;
     font-family: sans-serif;
@@ -57,13 +57,13 @@ body {
     transition: width 0.3s ease-out;
     z-index: 2000;
 }
-  
+
 @keyframes gradient {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
-  
+
 header {
     position: fixed;
     top: 0;
@@ -78,20 +78,20 @@ header {
     color: rgb(81, 81, 81) !important;
     margin: 0px 15px;
   }
-  
+
   .nav-link:hover {
     color: rgb(31, 203, 255) !important;
   }
-  
+
 .btn:hover {
     color: rgb(74, 149, 255) !important;
 }
-  
+
 .unique {
     border: none;
     background-color: white;
 }
-  
+
 /* SECTION SCROLL */
 
 section {
@@ -146,28 +146,28 @@ section {
     height: 100vh;
     padding: 20px;
 }
-  
+
   .main-content-bottom-container {
     display: flex;
     align-items: center;
     gap: 50px;
     max-width: 1200px;
   }
-  
+
 .special {
     max-height: 400px; 
     width: auto; 
     object-fit: contain; 
     color: white;
 }
-  
+
   .main-content-bottom-sub {
     max-width: 550px;
     display: flex;
     flex-direction: column;
     gap: 20px;
   }
-  
+
   .main-content-quote-second {
     font-weight: bold;
     font-family: "Inter", sans-serif;
@@ -175,7 +175,7 @@ section {
     color: white;
     line-height: 1.4;
   }
-  
+
   .main-bottom-text {
     font-family: "Inter", sans-serif;
     font-size: 1rem;
@@ -183,7 +183,7 @@ section {
     text-align: justify;
     line-height: 1.6;
   }
-  
+
 
 .footer {
     margin-top: 50px;
@@ -252,11 +252,10 @@ section {
 
 /* Footer Styling */
 /* Footer Styling */
-#footer-section {
+.footer-section {
     background-color: white;
     color: #333;
     padding: 20px 0;
-    height: 10vh;
     border-top: 1px solid #ddd;
     text-align: center;
     box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1);
@@ -266,7 +265,7 @@ section {
 }
 
 /* Social Media Buttons */
-#footer-section .btn-social {
+.footer-section .btn-social {
     background-color: transparent;
     color: #001f3f;
     font-size: 20px;
@@ -280,19 +279,19 @@ section {
     transition: transform 0.3s ease, color 0.3s ease;
 }
 
-#footer-section .btn-social:hover {
+.footer-section .btn-social:hover {
     color: #0056b3;
     transform: scale(1.1);
 }
 
 /* Footer Links */
-#footer-section a {
+.footer-section a {
     color: #001f3f;
     text-decoration: none;
     font-weight: bold;
 }
 
-#footer-section a:hover {
+.footer-section a:hover {
     text-decoration: underline;
 }
 
@@ -319,7 +318,6 @@ section {
     padding-top: 1.5rem !important;
     padding-bottom: 1.5rem !important;
 }
-
 .footer-class {
     display: flex;
     justify-content: space-around;
@@ -327,4 +325,4 @@ section {
 }
 */
 
-
+~
