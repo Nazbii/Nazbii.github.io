@@ -248,32 +248,30 @@ section {
     text-align: justify;
 }
 
-/* Footer Background */
+
 /* Footer Styling */
-/* General Footer Styling */
 .footer-section {
     background-color: white; /* White background for the footer */
     color: #333; /* Dark text */
     padding: 20px 0;
-    border-top: 1px solid #ddd; /* Subtle border at the top */
-    width: 100%; /* Stretch across the entire page width */
+    border-top: 1px solid #ddd; /* Subtle border for separation */
     text-align: center;
-    box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1); /* Optional shadow for separation */
+    box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1); /* Optional shadow for emphasis */
 }
 
-/* Social Media Button Styling */
+/* Social Media Buttons */
 .footer-section .btn-social {
-    background-color: transparent; /* No background color */
-    color: #001f3f; /* Navy blue icon color */
+    background-color: transparent; /* No background for buttons */
+    color: #001f3f; /* Navy blue icons */
     font-size: 20px; /* Icon size */
-    border: none; /* Remove borders */
+    border: none;
     border-radius: 50%; /* Circular icons */
     width: 50px;
     height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: color 0.3s ease, transform 0.3s ease; /* Hover effect */
+    transition: transform 0.3s ease, color 0.3s ease; /* Smooth hover effects */
 }
 
 .footer-section .btn-social:hover {
@@ -281,21 +279,14 @@ section {
     transform: scale(1.1); /* Slight zoom effect */
 }
 
-/* Copyright Section Styling */
-.footer-copyright {
-    background-color: rgba(0, 0, 0, 0.05); /* Light gray for contrast */
-    color: #555; /* Darker gray text */
-    font-size: 14px;
-    padding: 10px 0;
-}
-
-.footer-copyright .footer-link {
-    color: #001f3f; /* Navy blue link color */
+/* Footer Links */
+.footer-section a {
+    color: #001f3f; /* Navy link color */
     text-decoration: none;
     font-weight: bold;
 }
 
-.footer-copyright .footer-link:hover {
+.footer-section a:hover {
     text-decoration: underline;
 }
 
