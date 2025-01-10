@@ -252,7 +252,7 @@ section {
 
 /* Footer Styling */
 /* Footer Styling */
-.footer-section {
+#footer-section {
     background-color: white;
     color: #333;
     padding: 20px 0;
@@ -262,10 +262,11 @@ section {
     width: 100%;
     margin-top: auto; /* Pushes the footer below all content */
     position: relative; /* Ensures it's part of the normal flow */
+    height: 10vh;
 }
 
 /* Social Media Buttons */
-.footer-section .btn-social {
+#footer-section .btn-social {
     background-color: transparent;
     color: #001f3f;
     font-size: 20px;
@@ -279,13 +280,13 @@ section {
     transition: transform 0.3s ease, color 0.3s ease;
 }
 
-.footer-section .btn-social:hover {
+#footer-section .btn-social:hover {
     color: #0056b3;
     transform: scale(1.1);
 }
 
 /* Footer Links */
-.footer-section a {
+#footer-section a {
     color: #001f3f;
     text-decoration: none;
     font-weight: bold;
