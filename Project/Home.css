@@ -250,6 +250,7 @@ section {
 
 
 /* Footer Styling */
+/* Footer Styling */
 .footer-section {
     background-color: white;
     color: #333;
@@ -258,8 +259,11 @@ section {
     text-align: center;
     box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1);
     width: 100%;
+    margin-top: auto; /* Pushes the footer below all content */
+    position: relative; /* Ensures it's part of the normal flow */
 }
 
+/* Social Media Buttons */
 .footer-section .btn-social {
     background-color: transparent;
     color: #001f3f;
@@ -279,6 +283,7 @@ section {
     transform: scale(1.1);
 }
 
+/* Footer Links */
 .footer-section a {
     color: #001f3f;
     text-decoration: none;
@@ -288,6 +293,7 @@ section {
 .footer-section a:hover {
     text-decoration: underline;
 }
+
 
 
 
