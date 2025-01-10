@@ -158,6 +158,7 @@ section {
     max-height: 400px; 
     width: auto; 
     object-fit: contain; 
+    color: white;
 }
   
   .main-content-bottom-sub {
