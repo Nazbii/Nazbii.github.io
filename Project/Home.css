@@ -250,41 +250,52 @@ section {
 
 /* Footer Background */
 /* Footer Styling */
+/* General Footer Styling */
 .footer-section {
-    background-color: white; /* White background */
-    color: #333; /* Dark text */
+    background-color: white; /* Set footer background to white */
+    color: #333; /* Dark text for readability */
     padding: 20px 0;
-    border-top: 1px solid #ddd; /* Subtle border at the top */
+    border-top: 1px solid #ddd; /* Optional subtle border */
+    position: fixed; /* Fix footer at the bottom */
+    bottom: 0;
+    left: 0;
+    width: 100%; /* Full width of the page */
+    z-index: 1000; /* Ensure footer stays on top */
+    box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
+/* Social Media Button Styling */
 .footer-section .btn-social {
-    background-color: #001f3f; /* Navy blue for social buttons */
-    color: white;
-    font-size: 20px;
-    border: none;
-    border-radius: 50%; /* Circular buttons */
+    background-color: transparent; /* Remove background color for circle icons */
+    color: #001f3f; /* Navy blue icon color */
+    font-size: 20px; /* Icon size */
+    border: none; /* Remove border for buttons */
+    border-radius: 50%; /* Circular shape */
     width: 50px;
     height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: all 0.3s ease; /* Smooth hover effect */
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth hover effects */
 }
 
+/* Hover Effect for Social Buttons */
 .footer-section .btn-social:hover {
-    background-color: #0056b3; /* Lighter blue on hover */
-    color: white;
+    color: #0056b3; /* Lighter navy color on hover */
+    transform: scale(1.1); /* Slight zoom on hover */
 }
 
+/* Copyright Section */
 .footer-copyright {
-    background-color: rgba(0, 0, 0, 0.05); /* Subtle gray background for copyright */
+    background-color: rgba(0, 0, 0, 0.05); /* Light gray background for contrast */
     color: #555;
     font-size: 14px;
+    text-align: center;
     padding: 10px 0;
 }
 
 .footer-copyright .footer-link {
-    color: #001f3f; /* Navy link */
+    color: #001f3f; /* Navy blue links */
     text-decoration: none;
     font-weight: bold;
 }
@@ -292,6 +303,7 @@ section {
 .footer-copyright .footer-link:hover {
     text-decoration: underline;
 }
+
 
 
 
