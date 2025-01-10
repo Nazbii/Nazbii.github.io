@@ -248,10 +248,61 @@ section {
     text-align: justify;
 }
 
+/* Footer Background */
+footer {
+    background-color: white; /* White background for footer */
+    color: #333; /* Dark text for footer */
+}
+
+/* Social Media Button Styling */
+footer .btn {
+    background-color: #001f3f; /* Navy blue */
+    color: white; /* White icons */
+    font-size: 20px; /* Larger icons */
+    border: none;
+    border-radius: 50%; /* Circle buttons */
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease; /* Smooth hover transition */
+}
+
+footer .btn:hover {
+    background-color: #0056b3; /* Lighter blue on hover */
+    color: white;
+}
+
+/* Footer Text Styling */
+footer .text-center {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+footer .text-center a {
+    color: #001f3f; /* Navy blue link */
+    text-decoration: none;
+}
+
+footer .text-center a:hover {
+    text-decoration: underline;
+}
+
+/* Remove Container Margin for Full Width Footer */
+.container.my-5 {
+    margin: 0; /* Remove margins */
+    padding: 0; /* Remove padding */
+    max-width: 100%; /* Full width */
+}
+
+
+
+
+
 /*  */
 
-/* FOOTER */
-
+/* FOOTER 
 #footer-section {
     height: 10vh;
 }
@@ -273,3 +324,6 @@ section {
     justify-content: space-around;
     gap: 50px;
 }
+*/
+
+
