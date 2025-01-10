@@ -254,13 +254,22 @@ section {
 
 #footer-section {
     height: 10vh;
-  }
+}
   
-  .footer-box {
+.footer-box {
     border-top: 1px solid rgb(255, 255, 255);
-  }
+    display: flex !important;
+    justify-content: space-around !important;
+    gap: 100px;
+}
   
-  .d-flex {
+.d-flex {
     padding-top: 1.5rem !important;
     padding-bottom: 1.5rem !important;
-  }
+}
+
+.footer-class {
+    display: flex;
+    justify-content: space-around;
+    gap: 50px;
+}
