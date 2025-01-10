@@ -253,8 +253,8 @@ section {
 /* Footer Styling */
 /* Footer Styling */
 
-.footer {
-    height: 10vh;
+.spcl {
+    height: 10vh !important;
 }
 
 #footer-section {
