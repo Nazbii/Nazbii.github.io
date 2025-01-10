@@ -251,37 +251,39 @@ section {
 
 /* Footer Styling */
 .footer-section {
-    background-color: white; /* White background for the footer */
-    color: #333; /* Dark text */
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    color: #333;
     padding: 20px 0;
-    border-top: 1px solid #ddd; /* Subtle border for separation */
+    border-top: 1px solid #ddd;
     text-align: center;
-    box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1); /* Optional shadow for emphasis */
+    z-index: 1000;
 }
 
-/* Social Media Buttons */
 .footer-section .btn-social {
-    background-color: transparent; /* No background for buttons */
-    color: #001f3f; /* Navy blue icons */
-    font-size: 20px; /* Icon size */
+    background-color: transparent;
+    color: #001f3f;
+    font-size: 20px;
     border: none;
-    border-radius: 50%; /* Circular icons */
+    border-radius: 50%;
     width: 50px;
     height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: transform 0.3s ease, color 0.3s ease; /* Smooth hover effects */
+    transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .footer-section .btn-social:hover {
-    color: #0056b3; /* Lighter navy on hover */
-    transform: scale(1.1); /* Slight zoom effect */
+    color: #0056b3;
+    transform: scale(1.1);
 }
 
-/* Footer Links */
 .footer-section a {
-    color: #001f3f; /* Navy link color */
+    color: #001f3f;
     text-decoration: none;
     font-weight: bold;
 }
@@ -289,7 +291,6 @@ section {
 .footer-section a:hover {
     text-decoration: underline;
 }
-
 
 
 
