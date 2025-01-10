@@ -252,50 +252,45 @@ section {
 /* Footer Styling */
 /* General Footer Styling */
 .footer-section {
-    background-color: white; /* Set footer background to white */
-    color: #333; /* Dark text for readability */
+    background-color: white; /* White background for the footer */
+    color: #333; /* Dark text */
     padding: 20px 0;
-    border-top: 1px solid #ddd; /* Optional subtle border */
-    position: fixed; /* Fix footer at the bottom */
-    bottom: 0;
-    left: 0;
-    width: 100%; /* Full width of the page */
-    z-index: 1000; /* Ensure footer stays on top */
-    box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    border-top: 1px solid #ddd; /* Subtle border at the top */
+    width: 100%; /* Stretch across the entire page width */
+    text-align: center;
+    box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1); /* Optional shadow for separation */
 }
 
 /* Social Media Button Styling */
 .footer-section .btn-social {
-    background-color: transparent; /* Remove background color for circle icons */
+    background-color: transparent; /* No background color */
     color: #001f3f; /* Navy blue icon color */
     font-size: 20px; /* Icon size */
-    border: none; /* Remove border for buttons */
-    border-radius: 50%; /* Circular shape */
+    border: none; /* Remove borders */
+    border-radius: 50%; /* Circular icons */
     width: 50px;
     height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: color 0.3s ease, transform 0.3s ease; /* Smooth hover effects */
+    transition: color 0.3s ease, transform 0.3s ease; /* Hover effect */
 }
 
-/* Hover Effect for Social Buttons */
 .footer-section .btn-social:hover {
-    color: #0056b3; /* Lighter navy color on hover */
-    transform: scale(1.1); /* Slight zoom on hover */
+    color: #0056b3; /* Lighter navy on hover */
+    transform: scale(1.1); /* Slight zoom effect */
 }
 
-/* Copyright Section */
+/* Copyright Section Styling */
 .footer-copyright {
-    background-color: rgba(0, 0, 0, 0.05); /* Light gray background for contrast */
-    color: #555;
+    background-color: rgba(0, 0, 0, 0.05); /* Light gray for contrast */
+    color: #555; /* Darker gray text */
     font-size: 14px;
-    text-align: center;
     padding: 10px 0;
 }
 
 .footer-copyright .footer-link {
-    color: #001f3f; /* Navy blue links */
+    color: #001f3f; /* Navy blue link color */
     text-decoration: none;
     font-weight: bold;
 }
